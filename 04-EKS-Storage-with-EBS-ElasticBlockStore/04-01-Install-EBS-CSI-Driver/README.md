@@ -58,7 +58,8 @@ rolearn: arn:aws:iam::180789647333:role/eksctl-eksdemo1-nodegroup-eksdemo-NodeIn
 ## Step-04: Deploy Amazon EBS CSI Driver  
 - Verify kubectl version, it should be 1.14 or later
 ```
-kubectl version --client --short
+kubectl version --help
+kubectl version --client=false
 ```
 - Deploy Amazon EBS CSI Driver
 ```
