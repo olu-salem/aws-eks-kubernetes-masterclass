@@ -68,7 +68,7 @@ kubectl get nodes -o wide
 kubectl get svc -n dev1
 
 # Access Application
-http://<Worker-Node-Public-Ip>:<Dev1-NodePort>/usermgmt/health-stauts
+http://<Worker-Node-Public-Ip>:<Dev1-NodePort>/usermgmt/health-status
 ```
 ### Dev2 Namespace
 ```
@@ -79,7 +79,7 @@ kubectl get nodes -o wide
 kubectl get svc -n dev2
 
 # Access Application
-http://<Worker-Node-Public-Ip>:<Dev2-NodePort>/usermgmt/health-stauts
+http://<Worker-Node-Public-Ip>:<Dev2-NodePort>/usermgmt/health-status
 ```
 ## Step-05: Clean-Up
 ```
@@ -101,7 +101,12 @@ kubectl get sc,pv
 kubectl delete sc ebs-sc
 
 # Get all from All Namespaces
-kubectl get all -all-namespaces
+kubectl get all --all-namespaces
+```
+## Aternatively, we can cleanup as follow
+```
+kubectl delete -f kube-manifests/ -n dev1 
+kubectl delete -f kube-manifests/ -n dev2
 ```
 
 ## References:
